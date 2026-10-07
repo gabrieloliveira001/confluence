@@ -3104,6 +3104,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(MaterialItems.SOUL_OF_FLIGHT.get(), "飞翔之魂");
         add(MaterialItems.SOUL_OF_MIGHT.get(), "力量之魂");
         add(MaterialItems.BEETLE_HUSK.get(), "甲虫外壳");
+        add(MaterialItems.BROKEN_HERO_SWORD.get(), "断裂英雄剑");
         add(MaterialItems.SOUL_OF_SIGHT.get(), "视域之魂");
         add(MaterialItems.SOUL_OF_FRIGHT.get(), "恐惧之魂");
         add(MaterialItems.SOUL_OF_VOIGHT.get(), "虚空之魂");
@@ -3198,6 +3199,16 @@ public class ModChineseProvider extends LanguageProvider {
         add(SwordItems.BEE_KEEPER.get(), "养蜂人");
         add(SwordItems.BLADE_OF_GRASS.get(), "草剑");
         add(SwordItems.NIGHTS_EDGE.get(), "永夜刃");
+        add(SwordItems.EXCALIBUR.get(), "断钢剑");
+        add(SwordItems.TRUE_EXCALIBUR.get(), "真断钢剑");
+        add(SwordItems.TRUE_NIGHTS_EDGE.get(), "真永夜刃");
+        add(SwordItems.TERRA_BLADE.get(), "泰拉刃");
+        add(SwordItems.SEEDLER.get(), "种子弯刀");
+        add(SwordItems.THE_HORSEMANS_BLADE.get(), "无头骑士剑");
+        add(SwordItems.INFLUX_WAVER.get(), "波涌之刃");
+        add(SwordItems.STAR_WRATH.get(), "狂星之怒");
+        add(SwordItems.MEOWMERE.get(), "彩虹猫之刃");
+        add(SwordItems.ZENITH.get(), "天顶剑");
         add(SwordItems.WAFFLES_IRON.get(), "华夫饼烘烤模");
         add(SwordItems.BREAKER_BLADE.get(), "毁灭刃");
 

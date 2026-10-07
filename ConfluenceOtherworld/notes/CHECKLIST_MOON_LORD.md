@@ -75,6 +75,22 @@ A lógica de luta (padrões de ataque, dano e equilíbrio) **só foi testada sem
 - [ ] Armas do Moon Lord (Meowmere, Star Wrath, Terrarian, etc.), Portal Gun, Moon Bite
 - [ ] Skybox/efeitos de tela durante a luta
 
+## 7. Árvore da Zenith
+Todas as receitas são na bigorna do Hardmode (Mithril/Oricalco), como no Terraria 1.4.4:
+- [x] Excalibur = 12 Lingotes Consagrados
+- [x] True Excalibur = Excalibur + 24 Lingotes de Clorofita
+- [x] True Night's Edge = Night's Edge + 20 Almas da Visão + 20 do Poder + 20 do Terror
+- [x] Terra Blade = True Night's Edge + True Excalibur + Broken Hero Sword
+- [x] Zenith = Terra Blade + Meowmere + Star Wrath + Influx Waver + The Horseman's Blade + Seedler + Starfury + Bee Keeper + Espada Encantada + Espada Curta de Cobre
+- [x] Seedler: bag da Plantera (33%)
+- [x] Meowmere ou Star Wrath: bag do Moon Lord (uma das duas, garantida)
+- [~] Broken Hero Sword: bag da Plantera (25%) — **provisório**, no Terraria vem do Mothron (Eclipse Solar, não implementado)
+- [~] The Horseman's Blade: bag do Golem (25%) — **provisório**, no Terraria vem do Pumpking (Lua de Abóbora, só stub)
+- [~] Influx Waver: 50% ao matar o Cultista Lunático — **provisório**, no Terraria vem do Disco Voador Marciano (não implementado)
+- [~] Espadas novas usam projéteis existentes (feixe da Espada Encantada, do Night's Edge, estrelas da Starfury...) e texturas placeholder
+- [ ] A Meowmere usa o id `meowmere_sword`, porque `meowmere` já é o carrinho de mina
+- [ ] Comportamentos únicos (Zenith com espadas fantasmas, gatos da Meowmere, abóboras do Horseman's Blade)
+
 ---
 
 ## Bugs pré-existentes encontrados

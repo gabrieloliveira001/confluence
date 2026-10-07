@@ -1164,6 +1164,11 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
                             .when(LootItemRandomChanceCondition.randomChance(0.1F)))
                     .withPool(LootPool.lootPool().add(LootItem.lootTableItem(HamaxeItems.THE_AXE))
                             .when(LootItemRandomChanceCondition.randomChance(0.05F)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(SwordItems.SEEDLER))
+                            .when(LootItemRandomChanceCondition.randomChance(0.33F)))
+                    // 日食和蛾怪尚未实现，暂时由世纪之花掉落断裂英雄剑
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.BROKEN_HERO_SWORD))
+                            .when(LootItemRandomChanceCondition.randomChance(0.25F)))
                     .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GOLD_COIN)
                             .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 45 : 15)))
                     ))
@@ -1185,6 +1190,9 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
                             .when(LootItemRandomChanceCondition.randomChance(0.33F)))
                     .withPool(LootPool.lootPool().add(LootItem.lootTableItem(TCItems.EYE_OF_THE_GOLEM))
                             .when(LootItemRandomChanceCondition.randomChance(0.14F)))
+                    // 南瓜月尚未实现，暂时由石巨人掉落无头骑士剑
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(SwordItems.THE_HORSEMANS_BLADE))
+                            .when(LootItemRandomChanceCondition.randomChance(0.25F)))
                     .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GOLD_COIN)
                             .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 45 : 15)))
                     ))
@@ -1206,6 +1214,10 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
                     .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.PLATINUM_COIN)
                             .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 3 : 1)))
                     ))
+                    .withPool(LootPool.lootPool()
+                            .add(LootItem.lootTableItem(SwordItems.MEOWMERE))
+                            .add(LootItem.lootTableItem(SwordItems.STAR_WRATH))
+                    )
                     .withPool(LootPool.lootPool().add(LootItem.lootTableItem(PotionItems.GREATER_HEALING_POTION)
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15)))
                     ));

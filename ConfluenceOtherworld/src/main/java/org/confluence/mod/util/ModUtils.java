@@ -72,6 +72,7 @@ import org.confluence.mod.common.init.block.NatureBlocks;
 import org.confluence.mod.common.init.item.ConsumableItems;
 import org.confluence.mod.common.init.item.ModItems;
 import org.confluence.mod.common.init.item.PotionItems;
+import org.confluence.mod.common.init.item.SwordItems;
 import org.confluence.mod.common.init.item.ToolItems;
 import org.confluence.mod.common.item.common.TreasureBagItem;
 import org.confluence.mod.mixed.IMinecraftServer;
@@ -169,6 +170,10 @@ public final class ModUtils {
         }
         if (type == TEBossEntities.LUNATIC_CULTIST.get()) {
             LunarEventsGameEvent.INSTANCE.begin(living.blockPosition());
+            // 火星暴乱尚未实现，暂时由拜月教邪教徒掉落波涌之刃
+            if (level.random.nextBoolean()) {
+                living.spawnAtLocation(SwordItems.INFLUX_WAVER.toStack());
+            }
         } else {
             int pillar = LunarEventsGameEvent.pillarIndex(type);
             if (pillar >= 0) {

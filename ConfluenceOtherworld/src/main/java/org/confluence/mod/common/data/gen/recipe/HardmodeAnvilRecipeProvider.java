@@ -684,6 +684,14 @@ public class HardmodeAnvilRecipeProvider extends AbstractRecipeProvider {
         hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_SKULL.toStack(), AmountIngredient.of(30, Items.BONE), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(3, MaterialItems.SOUL_OF_LIGHT), AmountIngredient.of(3, MaterialItems.SOUL_OF_NIGHT));
         // 天界符（远古操纵机尚未实现，暂时在困难模式铁砧合成）
         hardmodeAnvil(recipeOutput, ConsumableItems.CELESTIAL_SIGIL.toStack(), AmountIngredient.of(12, MaterialItems.SOLAR_FRAGMENT), AmountIngredient.of(12, MaterialItems.VORTEX_FRAGMENT), AmountIngredient.of(12, MaterialItems.NEBULA_FRAGMENT), AmountIngredient.of(12, MaterialItems.STARDUST_FRAGMENT));
+        // 天顶剑合成树
+        hardmodeAnvil(recipeOutput, SwordItems.EXCALIBUR.toStack(), AmountIngredient.of(12, MaterialItems.HALLOWED_INGOT));
+        hardmodeAnvil(recipeOutput, SwordItems.TRUE_EXCALIBUR.toStack(), Ingredient.of(SwordItems.EXCALIBUR), AmountIngredient.of(24, MaterialItems.CHLOROPHYTE_INGOT));
+        hardmodeAnvil(recipeOutput, SwordItems.TRUE_NIGHTS_EDGE.toStack(), Ingredient.of(SwordItems.NIGHTS_EDGE), AmountIngredient.of(20, MaterialItems.SOUL_OF_SIGHT), AmountIngredient.of(20, MaterialItems.SOUL_OF_MIGHT), AmountIngredient.of(20, MaterialItems.SOUL_OF_FRIGHT));
+        hardmodeAnvil(recipeOutput, SwordItems.TERRA_BLADE.toStack(), Ingredient.of(SwordItems.TRUE_NIGHTS_EDGE), Ingredient.of(SwordItems.TRUE_EXCALIBUR), Ingredient.of(MaterialItems.BROKEN_HERO_SWORD));
+        hardmodeAnvil(recipeOutput, SwordItems.ZENITH.toStack(),
+                Ingredient.of(SwordItems.TERRA_BLADE), Ingredient.of(SwordItems.MEOWMERE), Ingredient.of(SwordItems.STAR_WRATH), Ingredient.of(SwordItems.INFLUX_WAVER), Ingredient.of(SwordItems.THE_HORSEMANS_BLADE),
+                Ingredient.of(SwordItems.SEEDLER), Ingredient.of(SwordItems.STARFURY), Ingredient.of(SwordItems.BEE_KEEPER), Ingredient.of(SwordItems.ENCHANTED_SWORD), Ingredient.of(SwordItems.COPPER_SHORT_SWORD));
     }
 
     protected void hardmodeAnvil(RecipeOutput recipeOutput, ItemStack result, ShapedRecipePattern pattern) {

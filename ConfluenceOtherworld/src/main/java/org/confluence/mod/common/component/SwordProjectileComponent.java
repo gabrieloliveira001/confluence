@@ -10,6 +10,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
@@ -23,6 +24,7 @@ import org.confluence.terraentity.data.component.EffectStrategyComponent;
 import org.confluence.terraentity.registries.generation.variant.AboveFallenGeneration;
 import org.confluence.terraentity.registries.generation.variant.ForwardGeneration;
 import org.confluence.terraentity.registries.hit_effect.variant.TimePossibilityAmplifierEffect;
+import org.confluence.terraentity.registries.track.variant.SimpleTrack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -105,6 +107,61 @@ public record SwordProjectileComponent(
             () -> new SwordProjectileComponent(1.0f, 0.8f, 0.9f, 100, 0f, 20,
                     ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.LIGHTS_BANE_PROJECTILE.getId(),
                     Optional.empty(), ForwardGeneration.of(0, 0),
+                    Optional.empty());
+
+    // 天顶剑合成树（弹幕外观暂时复用已有的剑气）
+    public static final Supplier<SwordProjectileComponent> TRUE_EXCALIBUR_PROJ =
+            () -> new SwordProjectileComponent(0.5f, 0.9f, 0.9f, 30, 0, 12,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.ENCHANTED_SWORD_PROJECTILE.getId(),
+                    Optional.empty(), ForwardGeneration.of(0, 0),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> TRUE_NIGHTS_EDGE_PROJ =
+            () -> new SwordProjectileComponent(0.5f, 0.7f, 0.9f, 30, 0, 14,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.NIGHTS_EDGE_PROJECTILE.getId(),
+                    Optional.empty(), ForwardGeneration.of(0, 10),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> TERRA_BLADE_PROJ =
+            () -> new SwordProjectileComponent(1.0f, 1.1f, 1.0f, 30, 0, 10,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.ENCHANTED_SWORD_PROJECTILE.getId(),
+                    Optional.empty(), ForwardGeneration.of(0, 0),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> SEEDLER_PROJ =
+            () -> new SwordProjectileComponent(0.4f, 0.8f, 0.9f, 25, 0.03f, 10,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.GRASS_PROJECTILE.getId(),
+                    Optional.empty(), ForwardGeneration.of(0, 15),
+                    Optional.of(EffectStrategyComponent.of(TimePossibilityAmplifierEffect.of("seedler_effect", MobEffects.POISON, 100, 1, 0.5f))));
+
+    public static final Supplier<SwordProjectileComponent> HORSEMANS_BLADE_PROJ =
+            () -> new SwordProjectileComponent(0.6f, 0.6f, 0.95f, 60, 0, 15,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.LIGHTS_BANE_PROJECTILE.getId(),
+                    Optional.of(new SimpleTrack(Mth.HALF_PI, 0.8f, 0.2f, Optional.empty(), 0.1)), ForwardGeneration.of(0, 0),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> INFLUX_WAVER_PROJ =
+            () -> new SwordProjectileComponent(0.8f, 0.9f, 1.0f, 40, 0, 12,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.ICE_BLADE_SWORD_PROJECTILE.getId(),
+                    Optional.of(new SimpleTrack(Mth.HALF_PI, 0.8f, 0.15f, Optional.empty(), 0.1)), ForwardGeneration.of(0, 0),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> STAR_WRATH_PROJ =
+            () -> new SwordProjectileComponent(1.2f, 1.6f, 0.95f, 100, 0, 8,
+                    ModSoundEvents.STAR.getId(), ModEntities.STAR_FURY_PROJECTILE.getId(),
+                    Optional.empty(), new AboveFallenGeneration(40, 40, 10, 2, 25, 8),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> MEOWMERE_PROJ =
+            () -> new SwordProjectileComponent(1.0f, 1.0f, 1.0f, 40, 0.02f, 10,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.ENCHANTED_SWORD_PROJECTILE.getId(),
+                    Optional.empty(), ForwardGeneration.of(0, 5),
+                    Optional.empty());
+
+    public static final Supplier<SwordProjectileComponent> ZENITH_PROJ =
+            () -> new SwordProjectileComponent(1.0f, 1.2f, 1.0f, 50, 0, 5,
+                    ModSoundEvents.REGULAR_STAFF_SHOOT_2.getId(), ModEntities.ENCHANTED_SWORD_PROJECTILE.getId(),
+                    Optional.of(new SimpleTrack(Mth.PI, 0.8f, 0.35f, Optional.empty(), 0.2)), ForwardGeneration.of(0, 10),
                     Optional.empty());
 
     public SoundEvent getSoundEvent() {

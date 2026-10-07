@@ -173,6 +173,35 @@ public class SwordItems {
                     ForwardGeneration.of(0, 0), Optional.empty()
             ))));
 
+    // 天顶剑合成树
+    public static final DeferredItem<BaseSwordItem> EXCALIBUR = register("excalibur", ModTiers.UNBREAKABLE, 35, 2.4F, ModRarity.PINK, BOARD_SWORD.apply(0.8F)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE));
+    public static final DeferredItem<BaseSwordItem> TRUE_EXCALIBUR = register("true_excalibur", ModTiers.UNBREAKABLE, 42, 2.4F, ModRarity.YELLOW, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.TRUE_EXCALIBUR_PROJ)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE)));
+    public static final DeferredItem<BaseSwordItem> TRUE_NIGHTS_EDGE = register("true_nights_edge", ModTiers.UNBREAKABLE, 40, 1.8F, ModRarity.YELLOW, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.TRUE_NIGHTS_EDGE_PROJ)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 4, AttributeModifier.Operation.ADD_VALUE)));
+    public static final DeferredItem<BaseSwordItem> TERRA_BLADE = register("terra_blade", ModTiers.UNBREAKABLE, 50, 2.6F, ModRarity.YELLOW, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.TERRA_BLADE_PROJ)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 3, AttributeModifier.Operation.ADD_VALUE)));
+    public static final DeferredItem<BaseSwordItem> SEEDLER = register("seedler", ModTiers.UNBREAKABLE, 42, 2.4F, ModRarity.LIME, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.SEEDLER_PROJ)));
+    public static final DeferredItem<BaseSwordItem> THE_HORSEMANS_BLADE = register("the_horsemans_blade", ModTiers.UNBREAKABLE, 50, 2.2F, ModRarity.YELLOW, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.HORSEMANS_BLADE_PROJ)));
+    public static final DeferredItem<BaseSwordItem> INFLUX_WAVER = register("influx_waver", ModTiers.UNBREAKABLE, 55, 2.4F, ModRarity.YELLOW, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.INFLUX_WAVER_PROJ)));
+    public static final DeferredItem<BaseSwordItem> STAR_WRATH = register("star_wrath", ModTiers.UNBREAKABLE, 60, 2.2F, ModRarity.RED, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.STAR_WRATH_PROJ)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 3, AttributeModifier.Operation.ADD_VALUE)));
+    // 物品id "meowmere" 已被彩虹猫矿车占用
+    public static final DeferredItem<BaseSwordItem> MEOWMERE = register("meowmere_sword", ModTiers.UNBREAKABLE, 65, 2.4F, ModRarity.RED, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.MEOWMERE_PROJ)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 3, AttributeModifier.Operation.ADD_VALUE)));
+    public static final DeferredItem<BaseSwordItem> ZENITH = register("zenith", ModTiers.UNBREAKABLE, 75, 3.0F, ModRarity.PURPLE, withSpecialSweep(0.8F, PROJ_SWORD
+            .apply(SwordProjectileComponent.ZENITH_PROJ)
+            .addAttributeModifier(Attributes.ENTITY_INTERACTION_RANGE, 4, AttributeModifier.Operation.ADD_VALUE)));
+
     // 赞助者物品
     public static final DeferredItem<BaseSwordItem> BROKEN_SWEET_SWORD = register("broken_sweet_sword", () -> new SweetSword(ModTiers.UNBREAKABLE, ModRarity.EXPERT, 2, 1, new BaseSwordItem.ModifierBuilder()));
     public static final DeferredItem<BaseSwordItem> SWEET_SWORD = register("sweet_sword", () -> new SweetSword(ModTiers.UNBREAKABLE, ModRarity.EXPERT, 6, 2, new BaseSwordItem.ModifierBuilder()
