@@ -576,6 +576,12 @@ public class ModChineseProvider extends LanguageProvider {
         add("tooltip.item.confluence.deer_thing.0", "右键使用以召唤独眼巨鹿，它会在冰原的寒风中现身");
         add("tooltip.item.confluence.deer_thing.1", "一只透着寒意的眼球，它的眼眶中映出了另一个世界的光景");
         add("tooltip.item.confluence.deer_thing.2", "“有个大家伙要来了…别再引来克劳斯！”");
+        add("tooltip.item.confluence.mechanical_eye.0", "右键使用以召唤双子魔眼，只能在夜间使用");
+        add("tooltip.item.confluence.mechanical_eye.1", "“今晚将会是可怕的一夜……”");
+        add("tooltip.item.confluence.mechanical_worm.0", "右键使用以召唤毁灭者，只能在夜间使用");
+        add("tooltip.item.confluence.mechanical_worm.1", "“你感觉到来自地下深处的震动……”");
+        add("tooltip.item.confluence.mechanical_skull.0", "右键使用以召唤机械骷髅王，只能在夜间使用");
+        add("tooltip.item.confluence.mechanical_skull.1", "“你周围的空气越来越冷……”");
         add("tooltip.item.confluence.enemy_banner.0", "附近的玩家获得针对以下怪的加成：%s");
 
         add("tooltip.item.confluence.tokyo_teddy_bear.0", "一位自卑的少女如破碎的泰迪熊般说到：");
@@ -1120,6 +1126,9 @@ public class ModChineseProvider extends LanguageProvider {
         add("event.confluence.crimson_heart_broken.0", "不寒而栗，毛骨悚然……！");
         add("event.confluence.crimson_heart_broken.1", "四面回荡着尖叫声……");
         add("event.confluence.eye_of_cthulhu", "你感到有个邪恶的东西在看着你……");
+        add("event.confluence.the_twins", "今晚将会是可怕的一夜……");
+        add("event.confluence.the_destroyer", "你感觉到来自地下深处的震动……");
+        add("event.confluence.skeletron_prime", "你周围的空气越来越冷……");
         add("event.confluence.hardmode_conversion.pass", "世界中已有转换任务！");
         add("event.confluence.hardmode_conversion.hardmode", "世界类型已转换为困难模式");
         add("event.confluence.hardmode_conversion.starting", "转换数据准备中，请稍等");
@@ -3494,6 +3503,9 @@ public class ModChineseProvider extends LanguageProvider {
         add(ConsumableItems.BLOODY_SPINE.get(), "血腥脊椎");
         add(ConsumableItems.ABEEMINATION.get(), "憎恶之蜂");
         add(ConsumableItems.DEER_THING.get(), "鹿华");
+        add(ConsumableItems.MECHANICAL_EYE.get(), "机械魔眼");
+        add(ConsumableItems.MECHANICAL_WORM.get(), "机械蠕虫");
+        add(ConsumableItems.MECHANICAL_SKULL.get(), "机械骷髅头");
         add(ConsumableItems.BOMB.get(), "炸弹");
         add(ConsumableItems.BOUNCY_BOMB.get(), "弹力炸弹");
         add(ConsumableItems.STICKY_BOMB.get(), "黏性炸弹");
@@ -3540,6 +3552,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(TreasureBagItems.HILL_OF_FLESH_TREASURE_BAG.get(), "血肉山宝藏袋");
         add(TreasureBagItems.THE_TWINS_TREASURE_BAG.get(), "双子魔眼宝藏袋");
         add(TreasureBagItems.SKELETRON_PRIME_TREASURE_BAG.get(), "机械骷髅王宝藏袋");
+        add(TreasureBagItems.THE_DESTROYER_TREASURE_BAG.get(), "毁灭者宝藏袋");
 
         // 杂项
         add(ModItems.COPPER_COIN.get(), "铜币");

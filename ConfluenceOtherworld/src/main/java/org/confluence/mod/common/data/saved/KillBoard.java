@@ -26,6 +26,7 @@ import org.confluence.mod.mixed.IMinecraftServer;
 import org.confluence.mod.mixed.IWorldOptions;
 import org.confluence.mod.network.s2c.KillBoardSyncPacketS2C;
 import org.confluence.terraentity.init.entity.TEBossEntities;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -86,18 +87,38 @@ public enum KillBoard implements IGlobalData {
         return defeatedEvents.keySet();
     }
 
+    public boolean isAllMechBossesDefeated() {
+        return isDefeated(TEBossEntities.THE_TWINS.get()) &&
+                isDefeated(TEBossEntities.THE_DESTROYER.get()) &&
+                isDefeated(TEBossEntities.SKELETRON_PRIME.get());
+    }
+
     public void defeat(EntityType<?> entityType) {
         boolean defeated = defeatedBosses.put(entityType, true);
         if (!defeated) {
             LanternNightGameEvent.INSTANCE.schedule();
         }
-        if (entityType == TEBossEntities.SKELETRON.get()) {
-            setGamePhase(ServerLifecycleHooks.getCurrentServer(), GamePhase.AFTER_SKELETRON);
-        } else if (entityType == TEBossEntities.WALL_OF_FLESH.get() || entityType == TEBossEntities.HILL_OF_FLESH.get()) {
-            setGamePhase(ServerLifecycleHooks.getCurrentServer(), GamePhase.WALL_OF_FLESH);
+        GamePhase unlocked = getUnlockedPhase(entityType);
+        // 阶段只升不降，避免肉后再打骷髅王时阶段回退
+        if (unlocked != null && unlocked.isAboveThan(gamePhase)) {
+            setGamePhase(ServerLifecycleHooks.getCurrentServer(), unlocked);
         } else {
             KillBoardSyncPacketS2C.sendToAll();
         }
+    }
+
+    /// 击败该Boss后应解锁的阶段，没有则返回null
+    private @Nullable GamePhase getUnlockedPhase(EntityType<?> entityType) {
+        if (entityType == TEBossEntities.SKELETRON.get()) {
+            return GamePhase.AFTER_SKELETRON;
+        } else if (entityType == TEBossEntities.WALL_OF_FLESH.get() || entityType == TEBossEntities.HILL_OF_FLESH.get()) {
+            return GamePhase.WALL_OF_FLESH;
+        } else if (entityType == TEBossEntities.THE_TWINS.get() || entityType == TEBossEntities.THE_DESTROYER.get() || entityType == TEBossEntities.SKELETRON_PRIME.get()) {
+            return isAllMechBossesDefeated() ? GamePhase.MECHANICAL_BOSSES : null;
+        } else if (entityType == TEBossEntities.PLANTERA.get()) {
+            return GamePhase.PLANTERA;
+        }
+        return null;
     }
 
     public void defeat(ResourceKey<? extends GameEvent> key) {
@@ -114,11 +135,14 @@ public enum KillBoard implements IGlobalData {
 
     public void setGamePhase(MinecraftServer server, GamePhase gamePhase) {
         if (this.gamePhase == gamePhase) return;
+        boolean wasHardmode = this.gamePhase.isHardmode();
         this.gamePhase = gamePhase;
         KillBoardSyncPacketS2C.sendToAll();
         if (gamePhase.isGraduated()) {
             IMinecraftServer.of(server).confluence$updateSecretFlag(IWorldOptions.GRADUATED);
-        } else if (gamePhase.isHardmode()) {
+        }
+        // 只在首次进入困难模式时转化世界，之后的阶段（新三王、世花、石巨人）不再重复触发
+        if (gamePhase.isHardmode() && !wasHardmode) {
             onUnlockHardmode(server);
             HardmodeConvertor.INSTANCE.start(server, false);
         }

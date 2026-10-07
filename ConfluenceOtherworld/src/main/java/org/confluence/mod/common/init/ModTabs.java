@@ -1044,6 +1044,9 @@ public final class ModTabs {
                         boss_event_summons.accept(ConsumableItems.BLOODY_SPINE.get());
                         boss_event_summons.accept(ConsumableItems.ABEEMINATION.get());
                         boss_event_summons.accept(ConsumableItems.DEER_THING.get());
+                        boss_event_summons.accept(ConsumableItems.MECHANICAL_EYE.get());
+                        boss_event_summons.accept(ConsumableItems.MECHANICAL_WORM.get());
+                        boss_event_summons.accept(ConsumableItems.MECHANICAL_SKULL.get());
                         boss_event_summons.accept(AccessoryItems.CLOTHIER_VOODOO_DOLL.get());
                         boss_event_summons.accept(AccessoryItems.GUIDE_VOODOO_DOLL.get());
                         boss_event_summons.accept(ConsumableItems.BLOOD_TEAR.get());

@@ -1133,6 +1133,27 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.MECHANICAL_WAGON_PIECE)))
                 //.withPool(LootPool.lootPool().add(LootItem.lootTableItem(DecorativeBlocks.SKELETRON_PRIME_RELIC)))
         );
+        // 毁灭者
+        for (String difficulty : new String[]{"classic", "expert", "master"}) {
+            boolean expert = !difficulty.equals("classic");
+            LootTable.Builder destroyer = LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.SOUL_OF_MIGHT)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(25, 40)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.HALLOWED_INGOT)
+                            .apply(SetItemCountFunction.setCount(expert ? UniformGenerator.between(20, 35) : UniformGenerator.between(15, 30)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GOLD_COIN)
+                            .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 42 : 12)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(PotionItems.GREATER_HEALING_POTION)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15)))
+                    ));
+            if (expert) {
+                destroyer.withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.MECHANICAL_BATTERY_PIECE)));
+            }
+            output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/the_destroyer/" + difficulty), destroyer);
+        }
 
         // 肉墙
         output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/wall_of_flesh/classic"), wallOfFleshTreasureBagCommon()

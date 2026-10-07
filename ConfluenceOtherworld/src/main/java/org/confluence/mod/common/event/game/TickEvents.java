@@ -48,6 +48,7 @@ public final class TickEvents {
             ConfluenceData.updateWind(level);
         } else if (dayTime == LibDateUtils._19$30) {
             BossDelaySpawner.spawnEyeOfCthulhu(level);
+            BossDelaySpawner.spawnMechanicalBoss(level);
             MeteoriteTracker.spawnMeteor(level);
         } else if (dayTime == LibDateUtils._00$00) {
             BossDelaySpawner.spawnDeerClops(level);

@@ -47,6 +47,7 @@ public final class CommonConfigs {
 
     public static BooleanValue EYE_OF_CTHULHU_NATURE_SPAWNING;
     public static BooleanValue DEERCLOPS_NATURE_SPAWNING;
+    public static BooleanValue MECHANICAL_BOSS_NATURE_SPAWNING;
 
     public static BooleanValue DO_METEORITE_SPAWNING;
 
@@ -200,6 +201,7 @@ public final class CommonConfigs {
                 builder.push("Boss");
                 EYE_OF_CTHULHU_NATURE_SPAWNING = builder.define("eyeOfCthulhuNatureSpawning", true);
                 DEERCLOPS_NATURE_SPAWNING = builder.define("deerclopsNatureSpawning", true);
+                MECHANICAL_BOSS_NATURE_SPAWNING = builder.define("mechanicalBossNatureSpawning", true);
                 builder.pop();
             }
             DO_METEORITE_SPAWNING = builder.define("doMeteoriteSpawning", true);

@@ -12,6 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
 import org.confluence.lib.common.data.gen.AbstractRecipeProvider;
 import org.confluence.lib.common.recipe.AmountIngredient;
+import org.confluence.mod.common.data.gen.ModDataGenerator;
 import org.confluence.mod.Confluence;
 import org.confluence.mod.common.init.ModTags;
 import org.confluence.mod.common.init.block.FunctionalBlocks;
@@ -677,6 +678,10 @@ public class HardmodeAnvilRecipeProvider extends AbstractRecipeProvider {
                 "ac",
                 "db"
         )));
+        // 新三王召唤物
+        hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_EYE.toStack(), AmountIngredient.of(3, MaterialItems.LENS), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(6, MaterialItems.SOUL_OF_LIGHT));
+        hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_WORM.toStack(), AmountIngredient.of(6, Ingredient.of(MaterialItems.ROTTEN_CHUNK, MaterialItems.VERTEBRA)), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(6, MaterialItems.SOUL_OF_NIGHT));
+        hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_SKULL.toStack(), AmountIngredient.of(30, Items.BONE), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(3, MaterialItems.SOUL_OF_LIGHT), AmountIngredient.of(3, MaterialItems.SOUL_OF_NIGHT));
     }
 
     protected void hardmodeAnvil(RecipeOutput recipeOutput, ItemStack result, ShapedRecipePattern pattern) {

@@ -275,6 +275,7 @@ public class ConfigurationLanguageSubProvider implements LanguageSubProvider {
         add("confluence.configuration.Boss.button", "Spawn Boss");
         add("confluence.configuration.Boss.tooltip", "When enabled, bosses will spawn naturally");
         add("confluence.configuration.eyeOfCthulhuNatureSpawning", "Eye of Cthulhu Natural Spawning");
+        add("confluence.configuration.mechanicalBossNatureSpawning", "Mechanical Bosses Natural Spawning");
         add("confluence.configuration.deerclopsNatureSpawning", "Deerclops Natural Spawning");
         add("confluence.configuration.dragonChargePlayer", "Fix Ender Dragon attacking players");
         add("confluence.configuration.dragonChargePlayer.tooltip", "When enabled, the Ender Dragon will dive to attack players");
@@ -565,6 +566,7 @@ public class ConfigurationLanguageSubProvider implements LanguageSubProvider {
         add("confluence.configuration.Boss.button", "BOSS生成");
         add("confluence.configuration.Boss.tooltip", "启用时，BOSS将会生成");
         add("confluence.configuration.eyeOfCthulhuNatureSpawning", "克苏鲁之眼自然生成");
+        add("confluence.configuration.mechanicalBossNatureSpawning", "机械Boss自然生成");
         add("confluence.configuration.deerclopsNatureSpawning", "巨鹿自然生成");
         add("confluence.configuration.dragonChargePlayer", "末影龙攻击玩家修复");
         add("confluence.configuration.dragonChargePlayer.tooltip", "开启后，末影龙将会俯冲攻击玩家");

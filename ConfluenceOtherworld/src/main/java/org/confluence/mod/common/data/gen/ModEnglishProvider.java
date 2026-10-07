@@ -585,6 +585,12 @@ public class ModEnglishProvider extends LanguageProvider {
         add("tooltip.item.confluence.deer_thing.0", "Right-click to summon the Deerclops, which will emerge amidst the frigid winds of the Tundra");
         add("tooltip.item.confluence.deer_thing.1", "A frigid eye that glimmers with the sight of another world in its socket");
         add("tooltip.item.confluence.deer_thing.2", "\"Something big is coming... Don't draw Klaus here again!\"");
+        add("tooltip.item.confluence.mechanical_eye.0", "Right-click to summon The Twins. Can only be used at night");
+        add("tooltip.item.confluence.mechanical_eye.1", "\"This is going to be a terrible night...\"");
+        add("tooltip.item.confluence.mechanical_worm.0", "Right-click to summon The Destroyer. Can only be used at night");
+        add("tooltip.item.confluence.mechanical_worm.1", "\"You feel vibrations from deep below...\"");
+        add("tooltip.item.confluence.mechanical_skull.0", "Right-click to summon Skeletron Prime. Can only be used at night");
+        add("tooltip.item.confluence.mechanical_skull.1", "\"The air is getting colder around you...\"");
         add("tooltip.item.confluence.enemy_banner.0", "Nearby players get a bonus against: %s");
 
         add("tooltip.item.confluence.tokyo_teddy_bear.0", "A self - abased girl said like a broken teddy bear:");
@@ -1081,6 +1087,9 @@ public class ModEnglishProvider extends LanguageProvider {
         add("event.confluence.crimson_heart_broken.0", "A horrible chill goes down your spine...");
         add("event.confluence.crimson_heart_broken.1", "Screams echo around you...");
         add("event.confluence.eye_of_cthulhu", "You feel an evil presence watching you...");
+        add("event.confluence.the_twins", "This is going to be a terrible night...");
+        add("event.confluence.the_destroyer", "You feel vibrations from deep below...");
+        add("event.confluence.skeletron_prime", "The air is getting colder around you...");
         add("event.confluence.hardmode_conversion.pass", "There is a conversion mission in the world!");
         add("event.confluence.hardmode_conversion.hardmode", "The world type has been changed to Hardmode");
         add("event.confluence.hardmode_conversion.starting", "Conversion data preparation, please wait");

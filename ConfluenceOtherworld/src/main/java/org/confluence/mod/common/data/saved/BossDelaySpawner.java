@@ -1,6 +1,7 @@
 package org.confluence.mod.common.data.saved;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -98,6 +99,30 @@ public enum BossDelaySpawner {
             );
             break;
         }
+    }
+
+    /// 困难模式下每晚有1/10的概率生成一只尚未击败的机械Boss
+    public static void spawnMechanicalBoss(ServerLevel level) {
+        if (!CommonConfigs.MECHANICAL_BOSS_NATURE_SPAWNING.get()) return;
+        if (!KillBoard.INSTANCE.getGamePhase().isHardmode()) return;
+        if (GameEventSystem.INSTANCE.getStartedEventAmount(true, false) > 0) return;
+        if (LanternNightGameEvent.INSTANCE.started()) return;
+        List<EntityType<? extends AbstractTerraBossBase>> candidates = new ArrayList<>(3);
+        for (EntityType<? extends AbstractTerraBossBase> type : List.<EntityType<? extends AbstractTerraBossBase>>of(TEBossEntities.THE_TWINS.get(), TEBossEntities.THE_DESTROYER.get(), TEBossEntities.SKELETRON_PRIME.get())) {
+            if (BossDelaySpawner.INSTANCE.hasSameTypeInQueue(type)) return;
+            if (!KillBoard.INSTANCE.isDefeated(type)) candidates.add(type);
+        }
+        if (candidates.isEmpty() || level.players().isEmpty() || level.random.nextInt(10) != 0) return;
+        EntityType<? extends AbstractTerraBossBase> type = candidates.get(level.random.nextInt(candidates.size()));
+        BossDelaySpawner.INSTANCE.pushBoss(600, type, player ->
+                !LibDateUtils.isNight(player.level())
+                        ? BossDelaySpawner.CANCEL
+                        : Boss.noBossInWorld(player.serverLevel()) ? BossDelaySpawner.SUCCESS : 20
+        );
+        level.getServer().getPlayerList().broadcastSystemMessage(
+                Component.translatable("event.confluence." + BuiltInRegistries.ENTITY_TYPE.getKey(type).getPath()).withColor(GlobalColors.MESSAGE.get()),
+                false
+        );
     }
 
     public static boolean eyeOfCthulhuChecker(ServerPlayer player) {

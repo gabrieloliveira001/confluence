@@ -739,6 +739,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ConsumableItems.BLOODY_SPINE.get(),
                 ConsumableItems.ABEEMINATION.get(),
                 ConsumableItems.DEER_THING.get(),
+                ConsumableItems.MECHANICAL_EYE.get(),
+                ConsumableItems.MECHANICAL_WORM.get(),
+                ConsumableItems.MECHANICAL_SKULL.get(),
                 AccessoryItems.CLOTHIER_VOODOO_DOLL.get(),
                 AccessoryItems.GUIDE_VOODOO_DOLL.get()
         );
@@ -1409,8 +1412,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 TESpawnEggItems.THE_TWINS_SPAWN_EGG.get(),
                 TESpawnEggItems.SKELETRON_PRIME_SPAWN_EGG.get(),
                 TESpawnEggItems.PLANTERA_SPAWN_EGG.get(),
-                TreasureBagItems.THE_TWINS_TREASURE_BAG.get(),
-                TreasureBagItems.SKELETRON_PRIME_TREASURE_BAG.get(),
                 HoeShovelItems.COBALT_HOE_SHOVEL.get(),
                 HoeShovelItems.PALLADIUM_HOE_SHOVEL.get(),
                 HoeShovelItems.MYTHRIL_HOE_SHOVEL.get(),
