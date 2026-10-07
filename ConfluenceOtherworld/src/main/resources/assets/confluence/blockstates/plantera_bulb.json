@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            {"model": "confluence:block/plantera_bulb"},
+            {"model": "confluence:block/plantera_bulb", "y": 90},
+            {"model": "confluence:block/plantera_bulb", "y": 180},
+            {"model": "confluence:block/plantera_bulb", "y": 270}
+        ]
+    }
+}

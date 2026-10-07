@@ -18,6 +18,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import org.confluence.mod.common.block.natural.LifeFruitBlock;
+import org.confluence.mod.common.block.natural.PlanteraBulbBlock;
 import org.confluence.mod.common.block.natural.spreadable.ISpreadable;
 import org.confluence.mod.common.block.natural.spreadable.SpreadingGrassBlock;
 import org.confluence.mod.common.init.block.NatureBlocks;
@@ -40,6 +41,8 @@ public class JungleGrassBlock extends SpreadingGrassBlock implements Bonemealabl
             level.setBlockAndUpdate(pos, Blocks.MUD.defaultBlockState());
         } else if (LifeFruitBlock.canGrow(level, aboveState, abovePos, random)) {
             level.setBlockAndUpdate(abovePos, NatureBlocks.LIFE_FRUIT.get().defaultBlockState());
+        } else if (PlanteraBulbBlock.canGrow(level, aboveState, abovePos, random)) {
+            level.setBlockAndUpdate(abovePos, NatureBlocks.PLANTERA_BULB.get().defaultBlockState());
         } else {
             super.randomTick(state, level, pos, random);
         }

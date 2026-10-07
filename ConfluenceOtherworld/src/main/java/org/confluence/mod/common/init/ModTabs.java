@@ -204,6 +204,7 @@ public final class ModTabs {
                         jungle.accept(NatureBlocks.JUNGLE_HIVE_BLOCK);
                         jungle.accept(NatureBlocks.JUNGLE_ROSE);
                         jungle.accept(NatureBlocks.LARVA);
+                        jungle.accept(NatureBlocks.PLANTERA_BULB);
                         jungle.accept(NatureBlocks.JUNGLE_PATH);
                         jungle.accept(NatureBlocks.THIN_HONEY_BLOCK);
                         jungle.accept(NatureBlocks.LOOSE_HONEY_BLOCK);

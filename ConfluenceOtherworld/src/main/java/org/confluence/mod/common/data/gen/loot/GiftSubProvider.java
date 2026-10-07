@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.AllOfCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.confluence.mod.Confluence;
@@ -1153,6 +1154,23 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
                 destroyer.withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.MECHANICAL_BATTERY_PIECE)));
             }
             output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/the_destroyer/" + difficulty), destroyer);
+        }
+        // 世纪之花
+        for (String difficulty : new String[]{"classic", "expert", "master"}) {
+            boolean expert = !difficulty.equals("classic");
+            output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/plantera/" + difficulty), LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ToolItems.TEMPLE_KEY)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(HookItems.THORN_HOOK))
+                            .when(LootItemRandomChanceCondition.randomChance(0.1F)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(HamaxeItems.THE_AXE))
+                            .when(LootItemRandomChanceCondition.randomChance(0.05F)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GOLD_COIN)
+                            .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 45 : 15)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(PotionItems.GREATER_HEALING_POTION)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15)))
+                    ))
+            );
         }
 
         // 肉墙

@@ -256,6 +256,7 @@ public class NatureBlocks {
     public static final DeferredBlock<JungleGrassBlock> JUNGLE_GRASS_BLOCK = registerWithItem("jungle_grass_block", () -> new JungleGrassBlock(ISpreadable.Type.JUNGLE, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).mapColor(MapColor.COLOR_GREEN)));
     public static final DeferredBlock<ThornBlock> JUNGLE_THORN = registerWithItem("jungle_thorn", () -> new ThornBlock(3.4f, Blocks.MOSS_BLOCK));
     public static final DeferredBlock<ThornBlock> PLANTERA_THORN = registerWithItem("plantera_thorn", () -> new ThornBlock(20, Blocks.MUD));
+    public static final DeferredBlock<PlanteraBulbBlock> PLANTERA_BULB = registerWithItem("plantera_bulb", PlanteraBulbBlock::new);
     public static final DeferredBlock<JungleSporeBlock> JUNGLE_SPORE = registerWithoutItem("jungle_spore", JungleSporeBlock::new);
     public static final DeferredBlock<NaturesGiftBlock> NATURES_GIFT = registerWithoutItem("natures_gift", () -> new NaturesGiftBlock(NaturesGiftBlock.BlockItemType.NATURES_GIFT));
     public static final DeferredBlock<JungleHiveBlock> JUNGLE_HIVE_BLOCK = registerWithItem("jungle_hive_block", JungleHiveBlock::new);

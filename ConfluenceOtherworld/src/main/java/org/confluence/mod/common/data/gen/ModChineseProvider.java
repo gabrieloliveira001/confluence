@@ -2451,6 +2451,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(NatureBlocks.SMALL_CACTUS.get(), "小型仙人掌");
         add(NatureBlocks.BLINKING_ROYAL_SHIMMERLILY.get(), "微光王莲");
         add(NatureBlocks.LARVA.get(), "幼虫");
+        add(NatureBlocks.PLANTERA_BULB.get(), "世纪之花灯泡");
         add(DecorativeBlocks.LOST_PAPER_BLOCK.get(), "遗落纸张");
         add(DecorativeBlocks.MURAL_BLOCK.get(), "壁画");
         add(NatureBlocks.CORRUPT_CACTUS.get(), "腐化仙人掌");
@@ -3553,6 +3554,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(TreasureBagItems.THE_TWINS_TREASURE_BAG.get(), "双子魔眼宝藏袋");
         add(TreasureBagItems.SKELETRON_PRIME_TREASURE_BAG.get(), "机械骷髅王宝藏袋");
         add(TreasureBagItems.THE_DESTROYER_TREASURE_BAG.get(), "毁灭者宝藏袋");
+        add(TreasureBagItems.PLANTERA_TREASURE_BAG.get(), "世纪之花宝藏袋");
 
         // 杂项
         add(ModItems.COPPER_COIN.get(), "铜币");

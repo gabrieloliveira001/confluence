@@ -21,6 +21,7 @@ public final class TreasureBagSubProvider {
                 .add(TEBossEntities.HILL_OF_FLESH, new TreasureBagDrop(TreasureBagItems.HILL_OF_FLESH_TREASURE_BAG.get()), false)
                 .add(TEBossEntities.THE_TWINS, new TreasureBagDrop(TreasureBagItems.THE_TWINS_TREASURE_BAG.get()), false)
                 .add(TEBossEntities.SKELETRON_PRIME, new TreasureBagDrop(TreasureBagItems.SKELETRON_PRIME_TREASURE_BAG.get()), false)
-                .add(TEBossEntities.THE_DESTROYER, new TreasureBagDrop(TreasureBagItems.THE_DESTROYER_TREASURE_BAG.get()), false);
+                .add(TEBossEntities.THE_DESTROYER, new TreasureBagDrop(TreasureBagItems.THE_DESTROYER_TREASURE_BAG.get()), false)
+                .add(TEBossEntities.PLANTERA, new TreasureBagDrop(TreasureBagItems.PLANTERA_TREASURE_BAG.get()), false);
     }
 }

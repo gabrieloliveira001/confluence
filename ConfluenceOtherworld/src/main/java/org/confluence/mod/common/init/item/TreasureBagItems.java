@@ -75,4 +75,5 @@ public class TreasureBagItems {
     public static final DeferredItem<TreasureBagItem> THE_TWINS_TREASURE_BAG = ITEMS.register("the_twins_treasure_bag", () -> new TreasureBagItem(Confluence.asResource("treasure_bag/the_twins"), ModRarity.PINK));
     public static final DeferredItem<TreasureBagItem> SKELETRON_PRIME_TREASURE_BAG = ITEMS.register("skeletron_prime_treasure_bag", () -> new TreasureBagItem(Confluence.asResource("treasure_bag/skeletron_prime"), ModRarity.PINK));
     public static final DeferredItem<TreasureBagItem> THE_DESTROYER_TREASURE_BAG = ITEMS.register("the_destroyer_treasure_bag", () -> new TreasureBagItem(Confluence.asResource("treasure_bag/the_destroyer"), ModRarity.PINK));
+    public static final DeferredItem<TreasureBagItem> PLANTERA_TREASURE_BAG = ITEMS.register("plantera_treasure_bag", () -> new TreasureBagItem(Confluence.asResource("treasure_bag/plantera"), ModRarity.LIME));
 }
