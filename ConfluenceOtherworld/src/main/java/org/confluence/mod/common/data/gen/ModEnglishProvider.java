@@ -591,6 +591,8 @@ public class ModEnglishProvider extends LanguageProvider {
         add("tooltip.item.confluence.mechanical_worm.1", "\"You feel vibrations from deep below...\"");
         add("tooltip.item.confluence.mechanical_skull.0", "Right-click to summon Skeletron Prime. Can only be used at night");
         add("tooltip.item.confluence.mechanical_skull.1", "\"The air is getting colder around you...\"");
+        add("tooltip.item.confluence.lihzahrd_power_cell.0", "Used at the Lihzahrd Altar to summon the Golem");
+        add("message.confluence.lihzahrd_altar.golem_exists", "The Golem has already awoken");
         add("tooltip.item.confluence.enemy_banner.0", "Nearby players get a bonus against: %s");
 
         add("tooltip.item.confluence.tokyo_teddy_bear.0", "A self - abased girl said like a broken teddy bear:");

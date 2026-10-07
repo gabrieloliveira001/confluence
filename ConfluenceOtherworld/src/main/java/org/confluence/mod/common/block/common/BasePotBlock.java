@@ -418,12 +418,15 @@ public class BasePotBlock extends Block implements SimpleWaterloggedBlock {
                 TEBossEntities.QUEEN_BEE.get(),
                 TEBossEntities.SKELETRON.get(),
                 TEBossEntities.THE_TWINS.get(),
-                TEBossEntities.PLANTERA.get()
+                TEBossEntities.THE_DESTROYER.get(),
+                TEBossEntities.SKELETRON_PRIME.get(),
+                TEBossEntities.PLANTERA.get(),
+                TEBossEntities.GOLEM.get()
         ) + KillBoard.INSTANCE.countDefeated(
                 GoblinArmyGameEvent.KEY
         );
         for (int i = 0; i < defeated; i++) {
-            ratio *= 1.1F; // todo 毁灭者、机械骷髅王、石巨人、海盗入侵、雪人军团
+            ratio *= 1.1F; // todo 海盗入侵、雪人军团
         }
         ratio *= moneyRatio;
         int amount = (int) Math.ceil(level.random.nextInt(80, 358) * ratio);

@@ -589,6 +589,24 @@ public record ChestSubProvider(HolderLookup.Provider registries) implements Loot
                 )
                 //先暂时使用空岛村箱子
         );
+        // 丛林神庙
+        output.accept(ModLootTables.JUNGLE_TEMPLE_CHESTS, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .add(LootItem.lootTableItem(ConsumableItems.LIHZAHRD_POWER_CELL).setWeight(40))
+                        .add(EmptyLootItem.emptyItem().setWeight(60))
+                )
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2, 4))
+                        .add(LootItem.lootTableItem(ModItems.GOLD_COIN).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).setWeight(30))
+                        .add(LootItem.lootTableItem(PotionItems.GREATER_HEALING_POTION).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 5))).setWeight(25))
+                        .add(LootItem.lootTableItem(MaterialItems.CHLOROPHYTE_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8))).setWeight(20))
+                        .add(LootItem.lootTableItem(MaterialItems.SOUL_OF_LIGHT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 6))).setWeight(10))
+                        .add(LootItem.lootTableItem(MaterialItems.SOUL_OF_NIGHT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 6))).setWeight(10))
+                )
+        );
+        output.accept(ModLootTables.JUNGLE_TEMPLE_ALTAR_CHEST, LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ConsumableItems.LIHZAHRD_POWER_CELL).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GOLD_COIN).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 10)))))
+        );
     }
 
 

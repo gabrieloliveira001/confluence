@@ -1,0 +1,14 @@
+{
+  "type": "confluence:jungle_temple",
+  "biomes": "#minecraft:is_jungle",
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "full",
+      "spawns": [
+        {"type": "terra_entity:lihzahrd", "weight": 100, "minCount": 1, "maxCount": 2}
+      ]
+    }
+  },
+  "step": "underground_structures",
+  "terrain_adaptation": "none"
+}

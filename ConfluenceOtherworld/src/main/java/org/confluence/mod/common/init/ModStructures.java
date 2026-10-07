@@ -18,6 +18,7 @@ public final class ModStructures {
     public static final DeferredHolder<StructureType<?>, StructureType<SmallLivingMahoganyTreeStructure>> SMALL_LIVING_MAHOGANY_TREE = TYPES.register("small_living_mahogany_tree", () -> () -> SmallLivingMahoganyTreeStructure.CODEC);
     public static final DeferredHolder<StructureType<?>, StructureType<CrimsonCaveStructure>> CRIMSON_CAVE = TYPES.register("crimson_cave", () -> () -> CrimsonCaveStructure.CODEC);
     public static final DeferredHolder<StructureType<?>, StructureType<QueenBeeHiveStructure>> QUEEN_BEE_HIVE = TYPES.register("queen_bee_hive", () -> () -> QueenBeeHiveStructure.CODEC);
+    public static final DeferredHolder<StructureType<?>, StructureType<JungleTempleStructure>> JUNGLE_TEMPLE = TYPES.register("jungle_temple", () -> () -> JungleTempleStructure.CODEC);
     public static final DeferredHolder<StructureType<?>, StructureType<ShimmerLakeStructure>> SHIMMER_LAKE = TYPES.register("shimmer_lake", () -> () -> ShimmerLakeStructure.CODEC);
     public static final DeferredHolder<StructureType<?>, StructureType<DungeonStructure>> DUNGEON = TYPES.register("dungeon", () -> () -> DungeonStructure.CODEC);
     public static final DeferredHolder<StructureType<?>, StructureType<HeavenIslandsStructure>> HEAVEN_ISLANDS = TYPES.register("heaven_islands", () -> () -> HeavenIslandsStructure.CODEC);

@@ -117,6 +117,8 @@ public enum KillBoard implements IGlobalData {
             return isAllMechBossesDefeated() ? GamePhase.MECHANICAL_BOSSES : null;
         } else if (entityType == TEBossEntities.PLANTERA.get()) {
             return GamePhase.PLANTERA;
+        } else if (entityType == TEBossEntities.GOLEM.get()) {
+            return GamePhase.GOLEM;
         }
         return null;
     }

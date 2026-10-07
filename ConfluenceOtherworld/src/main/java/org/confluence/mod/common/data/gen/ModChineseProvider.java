@@ -582,6 +582,8 @@ public class ModChineseProvider extends LanguageProvider {
         add("tooltip.item.confluence.mechanical_worm.1", "“你感觉到来自地下深处的震动……”");
         add("tooltip.item.confluence.mechanical_skull.0", "右键使用以召唤机械骷髅王，只能在夜间使用");
         add("tooltip.item.confluence.mechanical_skull.1", "“你周围的空气越来越冷……”");
+        add("tooltip.item.confluence.lihzahrd_power_cell.0", "在丛林蜥蜴祭坛使用以召唤石巨人");
+        add("message.confluence.lihzahrd_altar.golem_exists", "石巨人已经苏醒了");
         add("tooltip.item.confluence.enemy_banner.0", "附近的玩家获得针对以下怪的加成：%s");
 
         add("tooltip.item.confluence.tokyo_teddy_bear.0", "一位自卑的少女如破碎的泰迪熊般说到：");
@@ -3095,6 +3097,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(MaterialItems.SOUL_OF_NIGHT.get(), "暗影之魂");
         add(MaterialItems.SOUL_OF_FLIGHT.get(), "飞翔之魂");
         add(MaterialItems.SOUL_OF_MIGHT.get(), "力量之魂");
+        add(MaterialItems.BEETLE_HUSK.get(), "甲虫外壳");
         add(MaterialItems.SOUL_OF_SIGHT.get(), "视域之魂");
         add(MaterialItems.SOUL_OF_FRIGHT.get(), "恐惧之魂");
         add(MaterialItems.SOUL_OF_VOIGHT.get(), "虚空之魂");
@@ -3507,6 +3510,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(ConsumableItems.MECHANICAL_EYE.get(), "机械魔眼");
         add(ConsumableItems.MECHANICAL_WORM.get(), "机械蠕虫");
         add(ConsumableItems.MECHANICAL_SKULL.get(), "机械骷髅头");
+        add(ConsumableItems.LIHZAHRD_POWER_CELL.get(), "丛林蜥蜴能量电池");
         add(ConsumableItems.BOMB.get(), "炸弹");
         add(ConsumableItems.BOUNCY_BOMB.get(), "弹力炸弹");
         add(ConsumableItems.STICKY_BOMB.get(), "黏性炸弹");
@@ -3555,6 +3559,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(TreasureBagItems.SKELETRON_PRIME_TREASURE_BAG.get(), "机械骷髅王宝藏袋");
         add(TreasureBagItems.THE_DESTROYER_TREASURE_BAG.get(), "毁灭者宝藏袋");
         add(TreasureBagItems.PLANTERA_TREASURE_BAG.get(), "世纪之花宝藏袋");
+        add(TreasureBagItems.GOLEM_TREASURE_BAG.get(), "石巨人宝藏袋");
 
         // 杂项
         add(ModItems.COPPER_COIN.get(), "铜币");
@@ -3639,6 +3644,7 @@ public class ModChineseProvider extends LanguageProvider {
 
         add(FunctionalBlocks.CRIMSON_ALTAR.get(), "猩红祭坛");
         add(FunctionalBlocks.DEMON_ALTAR.get(), "恶魔祭坛");
+        add(FunctionalBlocks.LIHZAHRD_ALTAR.get(), "丛林蜥蜴祭坛");
         add(FunctionalBlocks.EXTRACTINATOR.get(), "提炼机");
         add(FunctionalBlocks.SKY_MILL.get(), "天磨");
         add(FunctionalBlocks.HEAVY_WORK_BENCH.get(), "重型工作台");

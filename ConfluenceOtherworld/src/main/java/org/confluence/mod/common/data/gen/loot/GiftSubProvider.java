@@ -1172,6 +1172,30 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
                     ))
             );
         }
+        // 石巨人
+        for (String difficulty : new String[]{"classic", "expert", "master"}) {
+            boolean expert = !difficulty.equals("classic");
+            LootTable.Builder golem = LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.BEETLE_HUSK)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(18, 23)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(PickaxeAxeItems.PICKSAW))
+                            .when(LootItemRandomChanceCondition.randomChance(expert ? 0.5F : 0.33F)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(TCItems.SUN_STONE))
+                            .when(LootItemRandomChanceCondition.randomChance(0.33F)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(TCItems.EYE_OF_THE_GOLEM))
+                            .when(LootItemRandomChanceCondition.randomChance(0.14F)))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GOLD_COIN)
+                            .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 45 : 15)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(PotionItems.GREATER_HEALING_POTION)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15)))
+                    ));
+            if (expert) {
+                golem.withPool(LootPool.lootPool().add(LootItem.lootTableItem(TCItems.SHINY_STONE)));
+            }
+            output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/golem/" + difficulty), golem);
+        }
 
         // 肉墙
         output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/wall_of_flesh/classic"), wallOfFleshTreasureBagCommon()

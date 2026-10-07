@@ -1,0 +1,13 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 61840253,
+    "separation": 20,
+    "spacing": 40,
+    "spread_type": "triangular"
+  },
+  "structures": [{
+    "structure": "confluence:jungle_temple",
+    "weight": 1
+  }]
+}

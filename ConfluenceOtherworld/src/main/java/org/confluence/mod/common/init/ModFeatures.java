@@ -64,6 +64,7 @@ public final class ModFeatures {
     public static final Supplier<RailSupportFeature> RAIL_SUPPORT = FEATURES.register("rail_support", () -> new RailSupportFeature(RailSupportFeature.Config.CODEC));
     public static final Supplier<RailTrapFeature> RAIL_TRAP = FEATURES.register("rail_trap", () -> new RailTrapFeature(RailTrapFeature.Config.CODEC));
     public static final Supplier<GroundBlockFeature> GROUND_BLOCK = FEATURES.register("ground_block", () -> new GroundBlockFeature(GroundBlockFeature.Config.CODEC));
+    public static final Supplier<LootChestFeature> LOOT_CHEST = FEATURES.register("loot_chest", () -> new LootChestFeature(LootChestFeature.Config.CODEC));
     public static final Supplier<GroundBlockNBTFeature> GROUND_BLOCK_NBT = FEATURES.register("ground_block_nbt", () -> new GroundBlockNBTFeature(GroundBlockNBTFeature.Config.CODEC));
     public static final Supplier<GemstoneCaveFeature> GEMSTONE_CAVE = FEATURES.register("gemstone_cave", () -> new GemstoneCaveFeature(GemstoneCaveFeature.Config.CODEC));
     public static final Supplier<DetonatorFeature> DETONATOR_FEATURE = FEATURES.register("detonator", () -> new DetonatorFeature(DetonatorFeature.Config.CODEC));

@@ -751,6 +751,7 @@ public final class ModTabs {
                         crafting_stations.accept(FunctionalBlocks.MEAT_GRINDER.get());
                         crafting_stations.accept(FunctionalBlocks.CRIMSON_ALTAR.get());
                         crafting_stations.accept(FunctionalBlocks.DEMON_ALTAR.get());
+                        crafting_stations.accept(FunctionalBlocks.LIHZAHRD_ALTAR.get());
                         crafting_stations.accept(FunctionalBlocks.LEAD_ANVIL.get());
                         crafting_stations.accept(FunctionalBlocks.CHIPPED_LEAD_ANVIL.get());
                         crafting_stations.accept(FunctionalBlocks.DAMAGED_LEAD_ANVIL.get());
@@ -901,6 +902,7 @@ public final class ModTabs {
                         souls_special.accept(MaterialItems.SOUL_OF_MIGHT.get());
                         souls_special.accept(MaterialItems.SOUL_OF_SIGHT.get());
                         souls_special.accept(MaterialItems.SOUL_OF_FRIGHT.get());
+                        souls_special.accept(MaterialItems.BEETLE_HUSK.get());
                         souls_special.accept(MaterialItems.SOUL_OF_VOIGHT.get());
                         souls_special.accept(MaterialItems.SOUL_OF_BRIGHT.get());
 
@@ -1048,6 +1050,7 @@ public final class ModTabs {
                         boss_event_summons.accept(ConsumableItems.MECHANICAL_EYE.get());
                         boss_event_summons.accept(ConsumableItems.MECHANICAL_WORM.get());
                         boss_event_summons.accept(ConsumableItems.MECHANICAL_SKULL.get());
+                        boss_event_summons.accept(ConsumableItems.LIHZAHRD_POWER_CELL.get());
                         boss_event_summons.accept(AccessoryItems.CLOTHIER_VOODOO_DOLL.get());
                         boss_event_summons.accept(AccessoryItems.GUIDE_VOODOO_DOLL.get());
                         boss_event_summons.accept(ConsumableItems.BLOOD_TEAR.get());
