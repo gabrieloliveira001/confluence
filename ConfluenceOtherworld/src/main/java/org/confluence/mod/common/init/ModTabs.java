@@ -1051,6 +1051,7 @@ public final class ModTabs {
                         boss_event_summons.accept(ConsumableItems.MECHANICAL_WORM.get());
                         boss_event_summons.accept(ConsumableItems.MECHANICAL_SKULL.get());
                         boss_event_summons.accept(ConsumableItems.LIHZAHRD_POWER_CELL.get());
+                        boss_event_summons.accept(ConsumableItems.CELESTIAL_SIGIL.get());
                         boss_event_summons.accept(AccessoryItems.CLOTHIER_VOODOO_DOLL.get());
                         boss_event_summons.accept(AccessoryItems.GUIDE_VOODOO_DOLL.get());
                         boss_event_summons.accept(ConsumableItems.BLOOD_TEAR.get());

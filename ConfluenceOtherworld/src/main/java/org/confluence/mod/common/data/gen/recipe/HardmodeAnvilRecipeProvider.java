@@ -682,6 +682,8 @@ public class HardmodeAnvilRecipeProvider extends AbstractRecipeProvider {
         hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_EYE.toStack(), AmountIngredient.of(3, MaterialItems.LENS), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(6, MaterialItems.SOUL_OF_LIGHT));
         hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_WORM.toStack(), AmountIngredient.of(6, Ingredient.of(MaterialItems.ROTTEN_CHUNK, MaterialItems.VERTEBRA)), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(6, MaterialItems.SOUL_OF_NIGHT));
         hardmodeAnvil(recipeOutput, ConsumableItems.MECHANICAL_SKULL.toStack(), AmountIngredient.of(30, Items.BONE), AmountIngredient.of(5, ModDataGenerator.INGOTS_IRON_AND_LEAD), AmountIngredient.of(3, MaterialItems.SOUL_OF_LIGHT), AmountIngredient.of(3, MaterialItems.SOUL_OF_NIGHT));
+        // 天界符（远古操纵机尚未实现，暂时在困难模式铁砧合成）
+        hardmodeAnvil(recipeOutput, ConsumableItems.CELESTIAL_SIGIL.toStack(), AmountIngredient.of(12, MaterialItems.SOLAR_FRAGMENT), AmountIngredient.of(12, MaterialItems.VORTEX_FRAGMENT), AmountIngredient.of(12, MaterialItems.NEBULA_FRAGMENT), AmountIngredient.of(12, MaterialItems.STARDUST_FRAGMENT));
     }
 
     protected void hardmodeAnvil(RecipeOutput recipeOutput, ItemStack result, ShapedRecipePattern pattern) {

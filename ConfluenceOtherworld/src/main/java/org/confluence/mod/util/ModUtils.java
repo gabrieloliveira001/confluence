@@ -63,6 +63,7 @@ import org.confluence.mod.common.component.LootComponent;
 import org.confluence.mod.common.data.saved.GamePhase;
 import org.confluence.mod.common.data.saved.KillBoard;
 import org.confluence.mod.common.data.saved.MeteoriteTracker;
+import org.confluence.mod.common.gameevent.LunarEventsGameEvent;
 import org.confluence.mod.common.gameevent.SlimeRainGameEvent;
 import org.confluence.mod.common.init.ModEffects;
 import org.confluence.mod.common.init.ModTags;
@@ -164,6 +165,20 @@ public final class ModUtils {
                 MeteoriteTracker.INSTANCE.spawnAtNextNight = true;
             } else if (!MeteoriteTracker.INSTANCE.spawnAtNextNight) {
                 MeteoriteTracker.INSTANCE.spawnAtNextNight = level.random.nextBoolean();
+            }
+        }
+        if (type == TEBossEntities.LUNATIC_CULTIST.get()) {
+            LunarEventsGameEvent.INSTANCE.begin(living.blockPosition());
+        } else {
+            int pillar = LunarEventsGameEvent.pillarIndex(type);
+            if (pillar >= 0) {
+                int count = LibUtils.isAtLeastExpert(level, living.blockPosition()) ? Mth.randomBetweenInclusive(level.random, 30, 40) : Mth.randomBetweenInclusive(level.random, 20, 30);
+                while (count > 0) {
+                    int stack = Math.min(count, 64);
+                    living.spawnAtLocation(new ItemStack(LunarEventsGameEvent.FRAGMENTS.get(pillar).get(), stack));
+                    count -= stack;
+                }
+                LunarEventsGameEvent.INSTANCE.onPillarDefeated(pillar);
             }
         }
         boolean stickySituation = type == TEBossEntities.KING_SLIME.get() && SlimeRainGameEvent.INSTANCE.started();

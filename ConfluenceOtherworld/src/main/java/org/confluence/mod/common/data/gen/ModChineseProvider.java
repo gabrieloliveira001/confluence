@@ -584,6 +584,12 @@ public class ModChineseProvider extends LanguageProvider {
         add("tooltip.item.confluence.mechanical_skull.1", "“你周围的空气越来越冷……”");
         add("tooltip.item.confluence.lihzahrd_power_cell.0", "在丛林蜥蜴祭坛使用以召唤石巨人");
         add("message.confluence.lihzahrd_altar.golem_exists", "石巨人已经苏醒了");
+        add("tooltip.item.confluence.celestial_sigil.0", "召唤月亮领主");
+        add("tooltip.item.confluence.celestial_sigil.1", "“末日临近……”");
+        add("message.confluence.lunar_events.start", "天界柱出现了！击杀它们的守卫来打破护盾。");
+        add("message.confluence.lunar_events.pillar", "%s出现在[%s, %s, %s]");
+        add("message.confluence.lunar_events.all_down", "天空开始颤抖……");
+        add("message.confluence.lunar_events.doom", "末日临近……");
         add("tooltip.item.confluence.enemy_banner.0", "附近的玩家获得针对以下怪的加成：%s");
 
         add("tooltip.item.confluence.tokyo_teddy_bear.0", "一位自卑的少女如破碎的泰迪熊般说到：");
@@ -3511,6 +3517,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(ConsumableItems.MECHANICAL_WORM.get(), "机械蠕虫");
         add(ConsumableItems.MECHANICAL_SKULL.get(), "机械骷髅头");
         add(ConsumableItems.LIHZAHRD_POWER_CELL.get(), "丛林蜥蜴能量电池");
+        add(ConsumableItems.CELESTIAL_SIGIL.get(), "天界符");
         add(ConsumableItems.BOMB.get(), "炸弹");
         add(ConsumableItems.BOUNCY_BOMB.get(), "弹力炸弹");
         add(ConsumableItems.STICKY_BOMB.get(), "黏性炸弹");
@@ -3560,6 +3567,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(TreasureBagItems.THE_DESTROYER_TREASURE_BAG.get(), "毁灭者宝藏袋");
         add(TreasureBagItems.PLANTERA_TREASURE_BAG.get(), "世纪之花宝藏袋");
         add(TreasureBagItems.GOLEM_TREASURE_BAG.get(), "石巨人宝藏袋");
+        add(TreasureBagItems.MOON_LORD_TREASURE_BAG.get(), "月亮领主宝藏袋");
 
         // 杂项
         add(ModItems.COPPER_COIN.get(), "铜币");

@@ -28,6 +28,7 @@ import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
@@ -49,6 +50,7 @@ import org.confluence.mod.util.ModUtils;
 import org.confluence.terraentity.entity.boss.DungeonGuardian;
 import org.confluence.terraentity.init.TESounds;
 import org.confluence.terraentity.init.entity.TEBossEntities;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3d;
 
 import java.util.*;
@@ -584,6 +586,21 @@ public class DungeonStructure extends Structure {
             return iterateDungeon(level, mob.chunkPosition(), structureStart -> mob.getY() >= IStructureStart.of(structureStart).confluence$cachedBoundingBox().minY() + getUpperBoundsFloor1());
         }
         return false;
+    }
+
+    /// 地牢大门内侧地面的位置（老人生成处），没有大门时返回null
+    public static @Nullable BlockPos findGatePos(StructureStart structureStart) {
+        for (StructurePiece piece : structureStart.getPieces()) {
+            if (piece instanceof SimpleTemplatePiece templatePiece && GATE.equals(templatePiece.templateName)) {
+                return switch (templatePiece.getRotation()) {
+                    case CLOCKWISE_90 -> templatePiece.templatePosition().offset(-15, 6, 15);
+                    case CLOCKWISE_180 -> templatePiece.templatePosition().offset(-15, 6, -15);
+                    case COUNTERCLOCKWISE_90 -> templatePiece.templatePosition().offset(15, 6, -15);
+                    default -> templatePiece.templatePosition().offset(15, 6, 15);
+                };
+            }
+        }
+        return null;
     }
 
     public static boolean iterateDungeon(ServerLevel level, ChunkPos chunkPos, Predicate<StructureStart> consumer) {

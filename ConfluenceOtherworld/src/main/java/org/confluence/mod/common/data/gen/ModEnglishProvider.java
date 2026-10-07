@@ -593,6 +593,12 @@ public class ModEnglishProvider extends LanguageProvider {
         add("tooltip.item.confluence.mechanical_skull.1", "\"The air is getting colder around you...\"");
         add("tooltip.item.confluence.lihzahrd_power_cell.0", "Used at the Lihzahrd Altar to summon the Golem");
         add("message.confluence.lihzahrd_altar.golem_exists", "The Golem has already awoken");
+        add("tooltip.item.confluence.celestial_sigil.0", "Summons the Moon Lord");
+        add("tooltip.item.confluence.celestial_sigil.1", "\"Impending doom approaches...\"");
+        add("message.confluence.lunar_events.start", "The celestial pillars have appeared! Slay their guardians to break their shields.");
+        add("message.confluence.lunar_events.pillar", "%s appeared at [%s, %s, %s]");
+        add("message.confluence.lunar_events.all_down", "The heavens begin to tremble...");
+        add("message.confluence.lunar_events.doom", "Impending doom approaches...");
         add("tooltip.item.confluence.enemy_banner.0", "Nearby players get a bonus against: %s");
 
         add("tooltip.item.confluence.tokyo_teddy_bear.0", "A self - abased girl said like a broken teddy bear:");

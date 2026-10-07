@@ -119,6 +119,8 @@ public enum KillBoard implements IGlobalData {
             return GamePhase.PLANTERA;
         } else if (entityType == TEBossEntities.GOLEM.get()) {
             return GamePhase.GOLEM;
+        } else if (entityType == TEBossEntities.MOON_LORD.get()) {
+            return GamePhase.MOON_LORD;
         }
         return null;
     }

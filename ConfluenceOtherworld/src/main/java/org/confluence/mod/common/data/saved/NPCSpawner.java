@@ -528,30 +528,20 @@ public enum NPCSpawner implements IGlobalData {
             ServerLevel level = player.serverLevel();
             return DungeonStructure.iterateDungeon(level, player.chunkPosition(), structureStart -> {
                 if (IStructureStart.of(structureStart).confluence$cachedBoundingBox().isInside(player.blockPosition())) {
-                    for (StructurePiece piece : structureStart.getPieces()) {
-                        if (piece instanceof SimpleTemplatePiece templatePiece && DungeonStructure.GATE.equals(templatePiece.templateName)) {
-                            BlockPos offset = switch (templatePiece.getRotation()) {
-                                case CLOCKWISE_90 ->
-                                        templatePiece.templatePosition().offset(-15, 6, 15);
-                                case CLOCKWISE_180 ->
-                                        templatePiece.templatePosition().offset(-15, 6, -15);
-                                case COUNTERCLOCKWISE_90 ->
-                                        templatePiece.templatePosition().offset(15, 6, -15);
-                                default -> templatePiece.templatePosition().offset(15, 6, 15);
-                            };
-                            Region npcRegion = new Region(offset);
-                            if (!hasNPCAlive(npcRegion, TENpcEntities.OLD_MAN.get())) {
-                                AbstractTerraNPC npc = TENpcEntities.OLD_MAN.get().create(level);
-                                if (npc == null) return false;
-                                npc.setPos(offset.getBottomCenter());
-                                level.addFreshEntity(npc);
-                                IAbstractTerraNPC.of(npc).confluence$setRegion(npcRegion);
-                                getRegionAliveDetails(npcRegion).put(TENpcEntities.OLD_MAN.get(), true);
-                                // 没有计入spawned列表
-                                return true;
-                            }
-                            return false;
+                    BlockPos offset = DungeonStructure.findGatePos(structureStart);
+                    if (offset != null) {
+                        Region npcRegion = new Region(offset);
+                        if (!hasNPCAlive(npcRegion, TENpcEntities.OLD_MAN.get())) {
+                            AbstractTerraNPC npc = TENpcEntities.OLD_MAN.get().create(level);
+                            if (npc == null) return false;
+                            npc.setPos(offset.getBottomCenter());
+                            level.addFreshEntity(npc);
+                            IAbstractTerraNPC.of(npc).confluence$setRegion(npcRegion);
+                            getRegionAliveDetails(npcRegion).put(TENpcEntities.OLD_MAN.get(), true);
+                            // 没有计入spawned列表
+                            return true;
                         }
+                        return false;
                     }
                 }
                 return false;

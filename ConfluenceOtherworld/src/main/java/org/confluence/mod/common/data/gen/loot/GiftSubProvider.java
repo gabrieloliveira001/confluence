@@ -1196,6 +1196,24 @@ public record GiftSubProvider(HolderLookup.Provider registries) implements LootT
             }
             output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/golem/" + difficulty), golem);
         }
+        // 月亮领主
+        for (String difficulty : new String[]{"classic", "expert", "master"}) {
+            boolean expert = !difficulty.equals("classic");
+            LootTable.Builder moonLord = LootTable.lootTable()
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(MaterialItems.RAW_LUMINITE)
+                            .apply(SetItemCountFunction.setCount(expert ? UniformGenerator.between(90, 110) : UniformGenerator.between(70, 90)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.PLATINUM_COIN)
+                            .apply(SetItemCountFunction.setCount(new ConstantValue(expert ? 3 : 1)))
+                    ))
+                    .withPool(LootPool.lootPool().add(LootItem.lootTableItem(PotionItems.GREATER_HEALING_POTION)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15)))
+                    ));
+            if (expert) {
+                moonLord.withPool(LootPool.lootPool().add(LootItem.lootTableItem(TCItems.GRAVITY_GLOBE)));
+            }
+            output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/moon_lord/" + difficulty), moonLord);
+        }
 
         // 肉墙
         output.accept(Confluence.asResourceKey(Registries.LOOT_TABLE, "treasure_bag/wall_of_flesh/classic"), wallOfFleshTreasureBagCommon()

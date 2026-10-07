@@ -45,6 +45,7 @@ public enum GameEventSystem implements IGlobalData {
         map.put(FrostMoonGameEvent.KEY, FrostMoonGameEvent.INSTANCE);
         map.put(PumpkinMoonGameEvent.KEY, PumpkinMoonGameEvent.INSTANCE);
         map.put(BoulderRainGameEvent.KEY, BoulderRainGameEvent.INSTANCE);
+        map.put(LunarEventsGameEvent.KEY, LunarEventsGameEvent.INSTANCE);
         ModLoader.postEvent(new CustomGameEventRegisterEvent(map));
     });
     private transient int startedEventAmount;
@@ -191,7 +192,7 @@ public enum GameEventSystem implements IGlobalData {
     }
 
     public static boolean shouldDenyNatureSpawn() {
-        return anyInvasionStarted(); // todo 日食，四柱
+        return anyInvasionStarted() || LunarEventsGameEvent.INSTANCE.started(); // todo 日食
     }
 
     public static void removeUnTracked(Set<Entity> spawned, ServerLevel level) {

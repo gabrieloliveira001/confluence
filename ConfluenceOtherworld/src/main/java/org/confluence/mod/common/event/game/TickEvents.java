@@ -42,6 +42,7 @@ public final class TickEvents {
         FallingStarItemEntity.summon(level);
         MeteoriteTracker.INSTANCE.tick(level);
         BossDelaySpawner.INSTANCE.tick(level);
+        CultistRitual.tick(level);
 
         int dayTime = LibDateUtils.getDayTime(level);
         if (dayTime == LibDateUtils._06$00) {

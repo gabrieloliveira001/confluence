@@ -23,7 +23,9 @@ import org.confluence.mod.common.item.common.*;
 import org.confluence.mod.common.item.mana.ArcaneCrystalItem;
 import org.confluence.mod.common.item.mana.ManaCrystalItem;
 import org.confluence.mod.common.item.mana.RecallManaCrystalItem;
+import org.confluence.mod.util.OverworldUtils;
 import org.confluence.terraentity.entity.boss.*;
+import org.confluence.terraentity.entity.boss.moonlord.MoonLord;
 import org.confluence.terraentity.entity.boss.skeletronprime.SkeletronPrime;
 import org.confluence.terraentity.entity.boss.thedestroyer.TheDestroyer;
 import org.confluence.terraentity.entity.boss.thetwins.TheTwins;
@@ -113,6 +115,7 @@ public class ConsumableItems {
     public static final DeferredItem<BossSummoningItem> MECHANICAL_WORM = ITEMS.register("mechanical_worm", () -> new BossSummoningItem(player -> LibDateUtils.isNight(player.level()), TheDestroyer::new, BossSummoningItem.getTooltipsFromString("mechanical_worm", 2, ChatFormatting.RED)));
     public static final DeferredItem<BossSummoningItem> MECHANICAL_SKULL = ITEMS.register("mechanical_skull", () -> new BossSummoningItem(player -> LibDateUtils.isNight(player.level()), level -> new SkeletronPrime(TEBossEntities.SKELETRON_PRIME.get(), level), BossSummoningItem.getTooltipsFromString("mechanical_skull", 2, ChatFormatting.RED)));
     public static final DeferredItem<TooltipItem> LIHZAHRD_POWER_CELL = ITEMS.register("lihzahrd_power_cell", () -> new TooltipItem(new Item.Properties(), ModRarity.YELLOW, TooltipItem.getTooltipsFromString("lihzahrd_power_cell", 1, ChatFormatting.GRAY)));
+    public static final DeferredItem<BossSummoningItem> CELESTIAL_SIGIL = ITEMS.register("celestial_sigil", () -> new BossSummoningItem(player -> player.level().dimension() == OverworldUtils.dimension(), level -> new MoonLord(TEBossEntities.MOON_LORD.get(), level), BossSummoningItem.getTooltipsFromString("celestial_sigil", 2, ChatFormatting.AQUA)));
 
     public static final DeferredItem<TooltipItem> GOLDEN_LOCK_BOX = ITEMS.register("golden_lock_box", () -> new TooltipItem(new Item.Properties().component(ModDataComponentTypes.LOOT.get(), new LootComponent(ModLootTables.GOLDEN_LOCK_BOX)), ModRarity.GREEN, TooltipItem.getTooltipsFromString("golden_lock_box", 2, ChatFormatting.GRAY)));
     public static final DeferredItem<TooltipItem> OBSIDIAN_LOCK_BOX = ITEMS.register("obsidian_lock_box", () -> new TooltipItem(new Item.Properties().component(ModDataComponentTypes.LOOT.get(), new LootComponent(ModLootTables.OBSIDIAN_LOCK_BOX)), ModRarity.GREEN, TooltipItem.getTooltipsFromString("obsidian_lock_box", 2, ChatFormatting.GRAY)));
